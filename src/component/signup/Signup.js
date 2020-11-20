@@ -13,7 +13,7 @@ const required = (value) => {
     if (!value) {
         return (
             <div className="alert alert-danger" role="alert">
-                This field is required!
+                Mời Nhập Thông Tin!
             </div>
         );
     }
@@ -23,17 +23,17 @@ const email = (value) => {
     if (!isEmail(value)) {
         return (
             <div className="alert alert-danger" role="alert">
-                This is not a valid email.
+                Không đúng định dạng email.
             </div>
         );
     }
 };
 
 const vusername = (value) => {
-    if (value.length < 3 || value.length > 20) {
+    if (value.length < 3 || value.length > 50) {
         return (
             <div className="alert alert-danger" role="alert">
-                The username must be between 3 and 20 characters.
+                Username phải lớn hơn 3 kí tự và nhỏ hơn 50 kí tự.
             </div>
         );
     }
@@ -43,17 +43,17 @@ const fullname = (value) => {
     if (value.length < 3 || value.length > 50) {
         return (
             <div className="alert alert-danger" role="alert">
-                The username must be between 3 and 50 characters.
+                Họ tên phải lớn hơn 3 kí tự và nhỏ hơn 50 kí tự.
             </div>
         );
     }
 };
 
 const vpassword = (value) => {
-    if (value.length < 6 || value.length > 40) {
+    if (value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)!=true) {
         return (
             <div className="alert alert-danger" role="alert">
-                The password must be between 6 and 40 characters.
+               Mật khẩu phải lớn hơn 8 kí tự, ít nhất một kí tự số, 1 kí tự in hoa, 1 kí tự thường và một kí tự đặc biệt.
             </div>
         );
     }
@@ -87,7 +87,6 @@ class Signup extends Component {
         this.setState({
             username: e.target.value,
         });
-        console.log(this.state.username);
     }
 
     onChangeEmail(e) {
@@ -111,12 +110,15 @@ class Signup extends Component {
 
         this.form.validateAll();
 
+        const { dispatch, history } = this.props;
+
         if (this.checkBtn.context._errors.length === 0) {
-            this.props
-                .dispatch(
-                    register(this.state.username, this.state.email, this.state.password)
+                dispatch(
+                    register(this.state.fullname, this.state.username, this.state.email, this.state.password)
                 )
                 .then(() => {
+                    history.push("/home");
+                    window.location.reload();
                     this.setState({
                         successful: true,
                     });
@@ -155,7 +157,7 @@ class Signup extends Component {
                                                     type="text"
                                                     className="form-control contact_form_name input_field"
                                                     name="fullname"
-                                                    value={this.state.username}
+                                                    value={this.state.fullname}
                                                     onChange={this.onChangeFullname}
                                                     validations={[required, fullname]}
                                                     placeholder="Họ Tên"

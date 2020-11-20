@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import $ from 'jquery';
 import Index from './component/index/Index';
+import Main from './component/main/Main';
 import Signup from './component/signup/Signup.js';
 import Signin from './component/signin/Signin.js';
 import SingleListingPage from './component/single/SingleListingPage';
@@ -36,7 +37,7 @@ class App extends Component {
     if (user) {
       this.setState({
         currentUser: user,
-        showModeratorBoard: user.roles.includes("ROLE_USER"),
+        showUserBoard: user.roles.includes("ROLE_USER"),
         showAdminBoard: user.roles.includes("ROLE_ADMIN"),
       });
     }
@@ -52,68 +53,8 @@ class App extends Component {
       <div>
         <Router history={history}>
           <div>
-            {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
-              <div className="navbar-nav mr-auto">
-
-                {showModeratorBoard && (
-                  <li className="nav-item">
-                    <Link to={"/create-post"} className="nav-link">
-                      Moderator Board
-                  </Link>
-                  </li>
-                )}
-
-                {showAdminBoard && (
-                  <li className="nav-item">
-                    <Link to={"/admin"} className="nav-link">
-                      Admin Board
-                  </Link>
-                  </li>
-                )}
-
-                {currentUser && (
-                  <li className="nav-item">
-                    <Link to={"/user"} className="nav-link">
-                      User
-                  </Link>
-                  </li>
-                )}
-              </div>
-
-              {currentUser ? (
-                <div className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <Link to={"/profile"} className="nav-link">
-                      {currentUser.username}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <a href="/signin" className="nav-link" onClick={this.logOut}>
-                      LogOut
-                  </a>
-                  </li>
-                </div>
-              ) : (
-                  <div className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                      <Link to={"/signin"} className="nav-link">
-                        signin
-                  </Link>
-                    </li>
-
-                    <li className="nav-item">
-                      <Link to={"/signup"} className="nav-link">
-                        Sign Up
-                  </Link>
-                    </li>
-                  </div>
-                  <Header></Header>
-                )}
-            </nav> */}
-
-            <div>
               <Switch>
-                <Route exact path={["/", "/home"]} component={Index} />
+                <Route exact path={["/", "/home"]} component={Main} />
                 <Route exact path="/signin" component={Signin} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/list-room" component={ListingRoom} />
@@ -121,7 +62,6 @@ class App extends Component {
                 <Route path="/create-post" component={PostDetail} />
                 <Route path="/admin" component={AdminIndex} />
               </Switch>
-            </div>
           </div>
         </Router>
       </div>

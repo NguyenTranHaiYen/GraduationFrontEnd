@@ -8,7 +8,7 @@ import pic2 from '../../images/island_t.png';
 import screen3 from '../../images/screen-shot-2018-10-01-at-95956-pm-15384061286081927130003.png';
 import pic3 from '../../images/kayak.png';
 import Footer from '../footer/Footer';
-import UserService from "../../services/UserService";
+import Service from "../../services/Service";
 import Header from '../header/Header';
 
 export default class index extends Component {
@@ -16,12 +16,12 @@ export default class index extends Component {
 		return (
 			<div>
 				<Header></Header>
-				<div className="home">
+				<div className="home1">
 					<div className="home_slider_container">
-						<div className="owl-carousel owl-theme home_slider">
+						<div className="owl-theme home_slider">
 							<div className="owl-item home_slider_item">
 								<div className="home_slider_background" />
-								<div className="home_slider_content tesxt-center">
+								<div className="home_slider_content text-center">
 									<div className="home_slider_content_inner" data-animation-in="flipInX" data-animation-out="animate-out fadeOut">
 										<h1>PTIT</h1>
 										<h1>Nhà Trọ</h1>

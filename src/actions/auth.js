@@ -2,8 +2,8 @@ import {ActionType} from "./type";
 
 import AuthService from "../services/AuthService";
 
-export const register = (username, email, password) => (dispatch) => {
-    return AuthService.register(username, email, password).then(
+export const register = (fullname, username, email, password) => (dispatch) => {
+    return AuthService.register(fullname, username, email, password).then(
       (response) => {
         dispatch({
           type: ActionType.REGISTER_SUCCESS,

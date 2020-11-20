@@ -1,12 +1,10 @@
 import axios from 'axios';
 import { Enum } from './Enum';
 
-const API_URL = 'http://localhost:8080/nhatro/';
-
-function AuthService () {
-    const login = (username, password) => {
+class AuthService {
+    login(username, password){
         return axios
-            .post(API_URL + Enum.SIGN_IN, { username, password })
+            .post(`${Enum.API_URL}${Enum.SIGN_IN}`, { username, password })
             .then((response) => {
                 if (response.data.accessToken) {
                     localStorage.setItem("user", JSON.stringify(response.data));
@@ -15,12 +13,13 @@ function AuthService () {
                 return response.data;
             });
     }
-    const logout = () => {
+    logout () {
         localStorage.removeItem("user");
     }
 
-    const register = (username, email, password) => {
-        return axios.post(API_URL + Enum.SIGN_UP, {
+    register (fullname, username, email, password) {
+        return axios.post(`${Enum.API_URL}${Enum.SIGN_UP}`, {
+            fullname,
             username,
             email,
             password,

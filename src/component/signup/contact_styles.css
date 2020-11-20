@@ -222,6 +222,10 @@ section
 {
 	height: 130% !important;
 }
+.alert{
+	min-height: 50px;
+	color: rgb(136, 6, 6)!important;
+}
 .nopadding
 {
 	padding: 0px !important;
@@ -333,7 +337,7 @@ section
 .contact_form
 {
 	margin-top: 52px;
-	font-size: 0px;
+	font-size: 16px;
 }
 .input_field
 {

@@ -12,7 +12,7 @@ const required = (value) => {
     if (!value) {
         return (
             <div className="alert alert-danger" role="alert">
-                This field is required!
+                Mời Nhập Thông Tin!
             </div>
         );
     }
@@ -58,9 +58,9 @@ class Signin extends Component {
         if (this.checkBtn.context._errors.length === 0) {
             dispatch(login(this.state.username, this.state.password))
                 .then(() => {
-                    history.push("/profile");
+                    history.push("/home");
                     window.location.reload();
-                })
+                })  
                 .catch(() => {
                     this.setState({
                         loading: false

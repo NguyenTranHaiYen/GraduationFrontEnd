@@ -330,6 +330,11 @@ section
 	width: 17px;
 	height: 17px;
 }
+.img-carousel 
+{  
+	height: 260px;
+	width:100%  
+}  
 .content_search:hover .mag_glass
 {
 	fill: #fa9e1c;
