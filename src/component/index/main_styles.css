@@ -406,6 +406,10 @@ section
 	height: 9px;
 	content: '';
 }
+.main_nav{
+	height: 70px;
+}
+
 .main_nav_col
 {
 	height: 143px;
@@ -432,6 +436,7 @@ section
 	-ms-transform: translateY(-6px);
 	-o-transform: translateY(-6px);
 	transform: translateY(-6px);
+	position: relative;
 }
 .header.scrolled .logo_container
 {
@@ -441,10 +446,11 @@ section
 	-o-transform: none;
 	transform: none;
 }
+
 .logo a
 {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
+	font-size: 25px;
 	color: #f4f4f8;
 	font-weight: 800;
 	text-transform: uppercase;
@@ -470,6 +476,7 @@ section
 	position: relative;
 	display: inline-block;
 	margin-right: 40px;
+	margin-top: 18px
 }
 .main_nav_item:last-child
 {
@@ -979,6 +986,9 @@ section
 	-ms-filter: brightness(200%) grayscale(100%);
 	-o-filter: brightness(200%) grayscale(100%);
   	filter: brightness(200%) grayscale(100%);
+}
+.head{
+	padding-top: 15px;
 }
 .search_tab:hover
 {

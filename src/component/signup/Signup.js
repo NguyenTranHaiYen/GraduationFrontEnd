@@ -50,7 +50,8 @@ const fullname = (value) => {
 };
 
 const vpassword = (value) => {
-    if (value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)!=true) {
+    const expression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!expression.test(value)) {
         return (
             <div className="alert alert-danger" role="alert">
                Mật khẩu phải lớn hơn 8 kí tự, ít nhất một kí tự số, 1 kí tự in hoa, 1 kí tự thường và một kí tự đặc biệt.

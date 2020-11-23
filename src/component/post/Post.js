@@ -28,7 +28,7 @@ export default function Post() {
                         <div className="col-lg-8">
                             <div className="offers_content">
                                 <div className="offers_price">$90<span>per night</span></div>
-                                <div class="rating_r rating_r_3 offers_rating" data-rating="3">
+                                <div className="rating_r rating_r_3 offers_rating" data-rating="3">
                                     <i></i>
                                     <i></i>
                                     <i></i>
@@ -40,13 +40,13 @@ export default function Post() {
   Lorem ipsum dolor sit amet.</p>
                                 <div className="offers_icons">
                                     <ul className="offers_icons_list">
-                                        <li className="offers_icons_item"><img src={post} alt />
+                                        <li className="offers_icons_item"><img src={post} alt="true"/>
                                         </li>
-                                        <li className="offers_icons_item"><img src={compass} alt />
+                                        <li className="offers_icons_item"><img src={compass} alt="true"/>
                                         </li>
-                                        <li className="offers_icons_item"><img src={bicycle} alt />
+                                        <li className="offers_icons_item"><img src={bicycle} alt="true"/>
                                         </li>
-                                        <li className="offers_icons_item"><img src={sailboat} alt />
+                                        <li className="offers_icons_item"><img src={sailboat} alt="true"/>
                                         </li>
                                     </ul>
                                 </div>

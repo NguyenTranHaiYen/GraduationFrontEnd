@@ -4,4 +4,5 @@ export const Enum = {
     SIGN_UP: "signup",
     GET_DISTRICT: "getDistricts",
     GET_STREET: "getStreets",
+    CREATE_POST: "createPost",
 }

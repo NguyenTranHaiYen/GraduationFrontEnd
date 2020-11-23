@@ -115,7 +115,7 @@ export default class index extends Component {
 									<div className="">
 										<div className=" text-center">
 											<div className="cta_title">Bạn Muốn Cho Thuê?</div>
-											<div class="rating_r rating_r_4">
+											<div className="rating_r rating_r_4">
 												<i></i>
 												<i></i>
 												<i></i>
@@ -174,7 +174,7 @@ export default class index extends Component {
 								<div className="col-lg-4 intro_col">
 									<div className="intro_item">
 										<div className="test_image"><img className="comment" src={screen} /></div>
-										<div className="test_icon"><img src={pic1} alt /></div>
+										<div className="test_icon"><img src={pic1} alt="true"/></div>
 										<div className="test_content_container">
 											<div className="test_content">
 												<div className="test_item_info">
@@ -190,7 +190,7 @@ export default class index extends Component {
 								<div className="col-lg-4 intro_col">
 									<div className="intro_item">
 										<div className="test_image"><img className="comment" src={screen1} alt="https://unsplash.com/@tschax" /></div>
-										<div className="test_icon"><img src={pic2} alt /></div>
+										<div className="test_icon"><img src={pic2} alt="true"/></div>
 										<div className="test_content_container">
 											<div className="test_content">
 												<div className="test_item_info">
@@ -206,7 +206,7 @@ export default class index extends Component {
 								<div className="col-lg-4 intro_col">
 									<div className="intro_item">
 										<div className="test_image"><img className="comment" src={screen3} alt="https://unsplash.com/@seefromthesky" /></div>
-										<div className="test_icon"><img src={pic3} alt /></div>
+										<div className="test_icon"><img src={pic3} alt="true"/></div>
 										<div className="test_content_container">
 											<div className="test_content">
 												<div className="test_item_info">
